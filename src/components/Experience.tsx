@@ -4,7 +4,7 @@ import FadeInWhenVisible from "./FadeInWhenVisible";
 const Experience = () => {
   return (
     <div className="relative grid items-center h-screen justify-evenly 2xl:place-content-center 2xl:gap-y-10">
-      <div className="absolute top-24">
+      <div className="absolute ">
         <h1 className="flex items-center justify-center m-20 text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
           Experience
         </h1>
