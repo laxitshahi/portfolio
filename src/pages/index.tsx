@@ -40,46 +40,49 @@ const Home: NextPage = () => {
       <Header />
       {/* Hero */}
 
-      <section className="snap-start">
+      <section id="hero" className="snap-start">
         <Hero />
       </section>
       {/* Bio */}
 
-      <section className="snap-center">
+      <section id="about" className="snap-center">
         <Bio />
       </section>
       {/* Experience */}
 
-      <section>
+      <section id="experience">
         <Experience />
       </section>
 
 
       {/*Projects*/}
-      <section>
+      <section id="projects">
         <div className="relative grid m-10 mt-48 text-center place-items-center gap-y-20">
           <h1 className="grid h-screen mx-auto text-3xl font-bold underline place-content-center snap-center md:decoration-8 decoration-4 decoration-red-400 ">
             Projects
           </h1>
           {projects.map((p) => {
-            return (
-              <div
+            return <> {
+              <li
                 key={p.name}
                 className="grid h-screen place-content-center snap-center"
               >
-                <Projects
-                  imgposition={p.imgposition}
-                  name={p.name}
-                  icons={p.icons}
-                  description={p.description}
-                  image={p.image}
-                />
-              </div>
-            );
+                <>
+                  <Projects
+                    imgposition={p.imgposition}
+                    name={p.name}
+                    icons={p.icons}
+                    description={p.description}
+                    image={p.image}
+                  />
+                </>
+              </li>
+            }</>;
           })}
         </div>
       </section>
       {/*Background*/}
+      <div className="absolute right-0 bottom-0 p-2 rounded-full bg-black m-10 text-white">^</div>
       <div className="absolute w-screen top-[15%] bg-red-300 left-0 right-0 h-[500px] -z-20 -skew-y-12 backdrop-blur-xl"></div>{" "}
     </div>
   );

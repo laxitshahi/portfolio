@@ -16,12 +16,12 @@ const Projects = ({ imgposition, icons, description, image, name }: Props) => {
       <div className="lg:hidden relative">
         {/* Start of Image Component */}
         <div className="absolute z-10 top-0 left-0 bottom-0 right-0 p-4 grid place-content-center text-xs sm:text-base gap-y-4 items-center text-center duration-300 bg-gray-50 opacity-0 hover:opacity-100 bg-opacity-90 rounded-xl ">
-          <div href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
+          <a href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
             <p>{name}</p>
             <span className="text-sm">
               <FaExternalLinkAlt />
             </span>
-          </div>
+          </a>
 
           <p className=" flex rounded-xl">
             {description}
@@ -47,20 +47,20 @@ const Projects = ({ imgposition, icons, description, image, name }: Props) => {
         <div className="lg:grid grid-cols-2 hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="w-11/12 justify-self-end grid border-2 border-black rounded-3xl mx-6"
+            className="w-11/12 justify-self-end grid rounded-3xl mx-6"
             width="300"
             height="300"
             src={image}
             alt=""
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className=" flex-col justify-center space-y-5 flex">
+          <div className=" flex-col justify-center flex">
 
             <a href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
               <p>{name}</p>
               <FaExternalLinkAlt className="text-sm" /> </a>
 
-            <p className="p-6 shadow-2xl border-2 border-black rounded-xl shadow-gray-500">
+            <p className="p-6 rounded-xl">
               {description}
             </p>
             <ul className="flex justify-center space-x-10 text-2xl">
@@ -79,13 +79,13 @@ const Projects = ({ imgposition, icons, description, image, name }: Props) => {
       <div>
         <div className="lg:grid grid-cols-2 hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="flex-col justify-center space-y-4 flex">
+          <div className="flex-col justify-center flex">
 
             <a href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
               <p>{name}</p>
               <FaExternalLinkAlt className="text-sm" /> </a>
 
-            <p className="p-6 shadow-2xl border-2 border-black rounded-xl shadow-gray-500">
+            <p className="p-6">
               {description}
             </p>
             <ul className="flex justify-center space-x-10 text-2xl">

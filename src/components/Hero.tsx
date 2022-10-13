@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 //Typewriter
@@ -42,12 +43,25 @@ const Hero = () => {
         </h2> */}
 
         <h3 className="flex text-xl tracking-widest text-gray-500 ">
-          <ul className="flex space-x-4">
-            <li>About</li>
-            <li>Experience</li>
-            <li>Projects</li>
-            <li>Skills</li>
-          </ul>
+          <div className="flex space-x-4">
+            <Link href="#about">
+              <button>About</button>
+            </Link>
+
+            <Link href="#experience">
+              <button>Experience</button>
+            </Link>
+
+            <Link href="#projects">
+              <button>Projects</button>
+            </Link>
+
+            {/* <Link href="#skills">
+              <button>
+                Skills
+              </button>
+            </Link> */}
+          </div>
         </h3>
       </div>
     </div>

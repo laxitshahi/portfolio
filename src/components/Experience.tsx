@@ -3,15 +3,16 @@ import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Experience = () => {
   return (
-    <div className="">
-      <h1 className="flex  items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
+    <div>
+      <h1 className="flex h-screen snap-center items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
         Experience
       </h1>
       <ul className="m-10">
         {jobData.map((job) => (
-          <li className="grid justify-center transition duration-300 ease-in-out delay-150 shadow-2xl place-items-center rounded-2xl opacity-60 hover:opacity-100">
-            <div className="max-w-lg overflow-hidden rounded-full ">
+          <li key={job.company} className="grid grid-flow-col-dense gap-x-4 h-screen snap-center max-w-3xl m-auto justify-center transition duration-300 ease-in-out delay-150 place-items-center rounded-2xl opacity-60 hover:opacity-100">
+            <div className="max-w-lg overflow-hidden rounded-full">
               <img
+                className="hidden sm:block"
                 height={job.size.height / 6}
                 width={job.size.width / 6}
                 src={job.image}
