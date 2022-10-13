@@ -1,10 +1,14 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import { Header, Hero, Bio, Experience } from "../components/";
-import { useScroll, motion } from "framer-motion";
+import React, { ReactNode } from "react";
 
-//Project components
-import { ImgLeft, ImgRight, ImgCenter } from "../components";
+import {
+  Header,
+  Hero,
+  Bio,
+  Experience,
+  Projects,
+  FadeInWhenVisible,
+} from "../components/";
 
 // Projects Import
 import {
@@ -15,57 +19,110 @@ import {
   FaGithub,
   FaNodeJs,
 } from "react-icons/fa";
+
 import {
   SiJavascript,
   SiTailwindcss,
   SiMongodb,
   SiRedux,
 } from "react-icons/si";
-const Home: NextPage = () => {
-  const { scrollYProgress } = useScroll();
-  return (
-    // <div className="grid h-screen overflow-scroll snap-y snap-mandatory scroll-smooth">
-    <div className="grid">
-      <motion.div
-        className="sticky top-0 left-0 right-0 flex h-2 bg-red-400 origin-[0%] opacity-100 z-100"
-        style={{ scaleX: scrollYProgress }}
-      />
 
+const Home: NextPage = () => {
+  // const { scrollYProgress } = useScroll();
+  return (
+    <div className="grid h-screen overflow-scroll snap-y snap-mandatory scroll-smooth">
+      {/* <div className="grid"> */}
+      {/* <motion.div */}
+      {/*   className="sticky top-0 left-0 right-0 flex h-2 bg-red-400 origin-[0%] opacity-100 z-100" */}
+      {/*   style={{ scaleX: scrollYProgress }} */}
+      {/* /> */}
       {/* Header */}
       <Header />
       {/* Hero */}
+
       <section className="snap-start">
         <Hero />
       </section>
-
       {/* Bio */}
-      <section className="snap-start">
+
+      <section className="snap-center">
         <Bio />
       </section>
-
       {/* Experience */}
-      <section className="">
+
+      <section>
         <Experience />
       </section>
 
-      {/* Projects */}
+
+      {/*Projects*/}
       <section>
         <div className="relative grid m-10 mt-48 text-center place-items-center gap-y-20">
-          {/* Split */}
-
-          <h1 className="mx-auto text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
+          <h1 className="grid h-screen mx-auto text-3xl font-bold underline place-content-center snap-center md:decoration-8 decoration-4 decoration-red-400 ">
             Projects
           </h1>
-
-          {/* Project 1 */}
-          <ImgLeft />
-          {/* Project 2 */}
-          <ImgRight />
+          {projects.map((p) => {
+            return (
+              <div
+                key={p.name}
+                className="grid h-screen place-content-center snap-center"
+              >
+                <Projects
+                  imgposition={p.imgposition}
+                  name={p.name}
+                  icons={p.icons}
+                  description={p.description}
+                  image={p.image}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
-      <div className="absolute w-screen top-[15%] bg-red-300 left-0 right-0 h-[500px] -z-20 -skew-y-12 backdrop-blur-xl"></div>
+      {/*Background*/}
+      <div className="absolute w-screen top-[15%] bg-red-300 left-0 right-0 h-[500px] -z-20 -skew-y-12 backdrop-blur-xl"></div>{" "}
     </div>
   );
 };
 
 export default Home;
+
+type Props = {
+  imgposition: string;
+  icons: ReactNode[];
+  description: string;
+  image: string;
+  name: string;
+  initialy: number;
+  finaly: number;
+};
+
+const projects: Props[] = [
+  {
+    name: "Soci-al",
+    icons: [
+      <FaReact />,
+      <FaNodeJs />,
+      <SiMongodb />,
+      <SiRedux />,
+      <SiTailwindcss />,
+    ],
+    description:
+      "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
+    image: "/images/social-goals.gif",
+    imgposition: "right",
+    initialy: 100,
+    finaly: 0,
+  },
+  {
+    name: "Patch",
+    icons: [<FaBootstrap />, <FaPython />, <FaCss3Alt />, <SiJavascript />],
+    description:
+      "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
+    image: "/images/patch.gif",
+    imgposition: "left",
+    initialy: 100,
+    finaly: 0,
+  },
+
+];

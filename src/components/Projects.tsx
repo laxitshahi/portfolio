@@ -1,70 +1,115 @@
-import React from "react";
-import {
-  FaBootstrap,
-  FaPython,
-  FaReact,
-  FaCss3Alt,
-  FaGithub,
-} from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
-type Props = {};
+import React, { ReactNode } from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const Projects = (props: Props) => {
-  return (
-    <div>
-      <section className="">
-        <div className="grid h-screen place-content-center gap-y-6 ">
-          <h1 className="flex items-center justify-center text-sm font-bold underline md:text-3xl md:decoration-8 decoration-4 decoration-red-400">
-            Projects
-          </h1>
-          <div>
-            <ul>
-              <li className="flex space-x-4 justify-evenly">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className="relative w-full border-2 border-black mr-96 rounded-3xl "
-                  width={300}
-                  height={300}
-                  src="/images/patch.gif"
-                  alt="GIF of Web Application, Patch."
-                />
-                <div className="grid place-items-center ">
-                  <div className="absolute grid p-4 text-left bg-gray-100 rounded-3xl place-items-center">
-                    <h1 className="text-xl font">Patch</h1>
-                    <ul className="flex text-xl justify-evenly">
-                      <li>
-                        <FaBootstrap />
-                      </li>
-                      <li>
-                        <FaPython />
-                      </li>
-                      <li>
-                        <FaCss3Alt />
-                      </li>
-                      <li>
-                        <SiJavascript />
-                      </li>
-                    </ul>
-                    <p className="text-center">
-                      There is a lack of services that provide a quick and easy
-                      method of price matching, allowing individuals to find the
-                      best price on a particular product among multiple
-                      retailors. The goal was to create an application that
-                      would allow users to do just that.
-                    </p>
-                  </div>
+type Props = {
+  imgposition: string;
+  icons: ReactNode[];
+  description: string;
+  image: string;
+  name: string;
+};
 
-                  <div className="flex ">
-                    <FaGithub />
-                  </div>
-                </div>
-              </li>
+const Projects = ({ imgposition, icons, description, image, name }: Props) => {
+  // Render In Center
+  function ImgCenter() {
+    return (
+      <div className="lg:hidden relative">
+        {/* Start of Image Component */}
+        <div className="absolute z-10 top-0 left-0 bottom-0 right-0 p-4 grid place-content-center text-xs sm:text-base gap-y-4 items-center text-center duration-300 bg-gray-50 opacity-0 hover:opacity-100 bg-opacity-90 rounded-xl ">
+          <div href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
+            <p>{name}</p>
+            <span className="text-sm">
+              <FaExternalLinkAlt />
+            </span>
+          </div>
+
+          <p className=" flex rounded-xl">
+            {description}
+
+          </p>
+          <ul className="justify-center space-x-10 text-2xl hidden sm:flex">
+            {icons}
+          </ul>
+        </div>
+        {/* End */}
+
+        <div className="flex flex-wrap content-center ">
+          <img src={image} className="mx-auto rounded-2xl w-auto" />
+        </div>
+      </div >
+    )
+  }
+  {/*Position Image Left*/ }
+  if (imgposition == "left") {
+    return (
+      <div>
+
+        <div className="lg:grid grid-cols-2 hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="w-11/12 justify-self-end grid border-2 border-black rounded-3xl mx-6"
+            width="300"
+            height="300"
+            src={image}
+            alt=""
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div className=" flex-col justify-center space-y-5 flex">
+
+            <a href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
+              <p>{name}</p>
+              <FaExternalLinkAlt className="text-sm" /> </a>
+
+            <p className="p-6 shadow-2xl border-2 border-black rounded-xl shadow-gray-500">
+              {description}
+            </p>
+            <ul className="flex justify-center space-x-10 text-2xl">
+              {icons}
             </ul>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
+
+        {/* Center the Image */}
+        <ImgCenter />
+      </div>
+    )
+  }
+  else if (imgposition == "right") {
+    return (
+      <div>
+        <div className="lg:grid grid-cols-2 hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div className="flex-col justify-center space-y-4 flex">
+
+            <a href="https://github.com/laxitshahi/patch" target="_blank" rel="noopener noreferrer" className=" text-2xl flex font-bold justify-center space-x-2 items-center">
+              <p>{name}</p>
+              <FaExternalLinkAlt className="text-sm" /> </a>
+
+            <p className="p-6 shadow-2xl border-2 border-black rounded-xl shadow-gray-500">
+              {description}
+            </p>
+            <ul className="flex justify-center space-x-10 text-2xl">
+              {icons}
+            </ul>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="w-11/12 justify-self-end grid border-2 border-black rounded-3xl mx-6"
+            width="300"
+            height="300"
+            src={image}
+            alt=""
+          />
+        </div>
+
+        {/* Center the Image */}
+        <ImgCenter />
+      </div>
+
+    )
+  }
+}
 
 export default Projects;
+
+

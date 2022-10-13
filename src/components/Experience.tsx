@@ -3,45 +3,37 @@ import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Experience = () => {
   return (
-    <div className="relative grid items-center h-screen justify-evenly 2xl:place-content-center 2xl:gap-y-10">
-      <div className="absolute ">
-        <h1 className="flex items-center justify-center m-20 text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
-          Experience
-        </h1>
-        <ul className="grid m-auto mx-1 sm:grid-cols-2 lg:mx-40 sm:gap-x-10 gap-x-6 place-items-center place-content-center">
-          {jobData.map((job) => (
-            <FadeInWhenVisible
-              initialy={job.initialy}
-              finaly={job.finaly}
-              key={job.company as string}
-            >
-              <li className="grid justify-center transition duration-300 ease-in-out delay-150 border-4 border-black shadow-2xl 2xl:space-x-8 place-items-center md:p-16 xs:p-4 rounded-2xl md:h-auto md:opacity-60 hover:opacity-100">
-                <div className="max-w-lg overflow-hidden rounded-full sm:inline-flex place-items-center ">
-                  <Image
-                    height={job.size.height / 6}
-                    width={job.size.width / 6}
-                    src={job.image}
-                    alt={job.alt}
-                  />
-                </div>
-                <div className="grid text-sm md:text-base md:place-items-center sm:text-sm ">
-                  <span className="font-bold">
-                    {job.position}{" "}
-                    <span className="font-bold text-red-400">
-                      @ {job.company}
-                    </span>
-                  </span>
-                  <ol className="list-disc">
-                    <li>{job.desc.p1}</li>
-                    <li>{job.desc.p2}</li>
-                    <li>{job.desc.p3}</li>
-                  </ol>
-                </div>
-              </li>
-            </FadeInWhenVisible>
-          ))}
-        </ul>
-      </div>
+    <div className="">
+      <h1 className="flex  items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
+        Experience
+      </h1>
+      <ul className="m-10">
+        {jobData.map((job) => (
+          <li className="grid justify-center transition duration-300 ease-in-out delay-150 shadow-2xl place-items-center rounded-2xl opacity-60 hover:opacity-100">
+            <div className="max-w-lg overflow-hidden rounded-full ">
+              <img
+                height={job.size.height / 6}
+                width={job.size.width / 6}
+                src={job.image}
+                alt={job.alt}
+              />
+            </div>
+            <div className="grid text-sm md:text-base place-items-center sm:text-sm ">
+              <span className="font-bold">
+                {job.position}{" "}
+                <span className="font-bold text-red-400">
+                  @ {job.company}
+                </span>
+              </span>
+              <ol className="list-disc">
+                <li>{job.desc.p1}</li>
+                <li>{job.desc.p2}</li>
+                <li>{job.desc.p3}</li>
+              </ol>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

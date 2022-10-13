@@ -5,13 +5,14 @@ interface Props {
   initialx?: number;
   initialy?: number;
   finaly?: number;
+  finalx?: number;
 }
 
-const FadeInWhenVisible = ({ children, initialx, initialy, finaly }: Props) => {
+const FadeInWhenVisible = ({ children, initialx, initialy, finaly, finalx }: Props) => {
   if (!initialx) initialx = 0;
   if (!initialy) initialy = 0;
   if (!finaly) finaly = 0;
-
+  if (!finalx) finalx = 0;
   return (
     <motion.div
       initial={{ y: initialy, x: initialx, opacity: 0 }}

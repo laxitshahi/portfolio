@@ -2,7 +2,9 @@ import React from "react";
 import { FaBootstrap, FaCss3Alt, FaPython } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 
-type Props = {};
+type Props = {
+
+};
 
 const ImgRight = (props: Props) => {
   return (
