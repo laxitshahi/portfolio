@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import React, { ReactNode } from "react";
-
+import Link from "next/link"
 import {
   Header,
   Hero,
@@ -18,6 +18,7 @@ import {
   FaCss3Alt,
   FaGithub,
   FaNodeJs,
+  FaArrowCircleUp,
 } from "react-icons/fa";
 
 import {
@@ -43,8 +44,8 @@ const Home: NextPage = () => {
       <section id="about" className="snap-center">
         <Bio />
       </section>
-      {/* Experience */}
 
+      {/* Experience */}
       <section id="experience">
         <Experience />
       </section>
@@ -63,6 +64,7 @@ const Home: NextPage = () => {
                 className="grid h-screen place-content-center snap-center"
               >
                 <Projects
+                  link={p.link}
                   imgposition={p.imgposition}
                   name={p.name}
                   icons={p.icons}
@@ -71,11 +73,16 @@ const Home: NextPage = () => {
                 />
               </li>
             );
-          })}        </div>
+          })}
+        </div>
       </section>
+
+
       {/*Background*/}
-      <div className="absolute right-0 bottom-0 p-2 rounded-full bg-black m-10 text-white">^</div>
-      <div className="absolute w-screen top-[15%] bg-red-300 left-0 right-0 h-[500px] -z-20 -skew-y-12 backdrop-blur-xl"></div>{" "}
+      <Link href="#hero">
+        <div className="absolute right-0 bottom-0 text-3xl md:text-4xl xl:text-5xl rounded-full m-3 hover:motion-reduce:animate-bounce transition delay-200"> <FaArrowCircleUp /></div>
+      </Link>
+      <div className="absolute w-screen top-[30%] bg-red-300 left-0 right-0 h-[300px] -z-20 skew-y-12 backdrop-blur-xl"></div>{" "}
     </div>
   );
 };
@@ -87,6 +94,7 @@ type Props = {
   description: string;
   image: string;
   name: string;
+  link: string;
   initialy: number;
   finaly: number;
 };
@@ -103,9 +111,10 @@ const projects: Props[] = [
       <SiTailwindcss key="tailwindcss" />,
     ],
     description:
-      "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
+      "There is an unessecary amount of time spent on searching for goals, rather than carrying them out. The idea behind Soci-al (Social + Goal) is to speed up the process of finding goals, so that you can focus on completing them.",
     image: "/images/social-goals.gif",
     imgposition: "right",
+    link: "https://soci-al.herokuapp.com/login",
     initialy: 100,
     finaly: 0,
   },
@@ -115,6 +124,7 @@ const projects: Props[] = [
     description:
       "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors. The goal was to create an application that would allow users to do just that.",
     image: "/images/patch.gif",
+    link: "https://github.com/laxitshahi/patch",
     imgposition: "left",
     initialy: 100,
     finaly: 0,

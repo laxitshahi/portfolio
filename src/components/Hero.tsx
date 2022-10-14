@@ -10,8 +10,16 @@ const Hero = () => {
     <div className="flex items-center justify-center min-h-screen">
       {/* Hero */}
       <div className="grid space-y-4 text-center place-items-center">
-
-        <h2 className="flex justify-center text-2xl text-2xl sm:text-5xl xl:text-[5.052rem]  ">
+        <div className="border-b-8 border-black rounded-full ">
+          <Image
+            className="w-full rounded-full "
+            width={300}
+            height={300}
+            src="/images/profile.jpeg"
+            alt="Picture of a young adult male"
+          />
+        </div>
+        <h2 className="flex justify-center text-2xl sm:text-5xl xl:text-[4.052rem]  ">
           <span className="font-bold text-blue-900">
             <Typewriter
               words={["Hi, ", "Namaste, ", "Bonjour, "]}
@@ -27,13 +35,12 @@ const Hero = () => {
           </span>
           my name is Laxit!
         </h2>
+        {/* <h2 className="flex justify-center text-3xl md:text-5xl">
+          I am a Computer Engineering Student with a passion for Software
+          Development!
+        </h2> */}
 
-        <p className="md:flex sm:text-base justify-center hidden md:text-xl xl:text-3xl items-center">
-          I am a Computer Engineering Student with a	&nbsp; <span className="text-white xl:text-4xl">passion</span> 	&nbsp; for Software
-          Development.
-        </p>
-
-        <h3 className="flex text-sm md:text-lg lg:text-2xl tracking-widest text-gray-500 ">
+        <h3 className="flex text-xl tracking-widest text-gray-500 ">
           <div className="flex space-x-4">
             <Link href="#about">
               <button>About</button>

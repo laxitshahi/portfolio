@@ -16,9 +16,9 @@ const Header = () => {
         initial={{ scale: 0.5, y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="m-4 flex justify-between items-center "
+        className="m-2 flex justify-between items-center "
       >
-        <ul className="flex space-x-4 w-1/3 justify-left z-80 text-base sm:text-xl md:2xl lg:text-3xl ">
+        <ul className="flex space-x-4 w-1/3 z-80 text-base sm:text-xl md:2xl lg:text-3xl ">
           <li>
             <a
               href={headerItems["github"].link}
@@ -39,7 +39,7 @@ const Header = () => {
           </li>
         </ul>
         {/* Button */}
-        <button onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className="text-xs sm:text-sm md:text-base px-4 py-2.5 flex items-center space-x-1 relative rounded-full group overflow-hidden font-medium bg-black text-white inline-block z-80">
+        <button onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className="-mx-5 md:-mx-2 text-xs sm:text-sm md:text-base xs:p-1 md:p-3 md:py-2.5 flex items-center relative rounded-full group overflow-hidden font-medium bg-black text-white z-80">
           <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-blue-900 group-hover:h-full opacity-90"></span>
           <span className="relative group-hover:text-white">Get In Touch</span>
         </button>
