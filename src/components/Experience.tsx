@@ -9,8 +9,8 @@ const Experience = () => {
       </h1>
       <ul className="m-10">
         {jobData.map((job) => (
-          <li key={job.company} className="grid grid-flow-col-dense gap-x-4 h-screen snap-center max-w-3xl m-auto justify-center transition duration-300 ease-in-out delay-150 place-items-center rounded-2xl opacity-60 hover:opacity-100">
-            <div className="max-w-lg overflow-hidden rounded-full">
+          <li key={job.company} className="grid grid-flow-col-dense gap-x-4 h-screen snap-center justify-center transition duration-300 ease-in-out delay-150 place-items-center rounded-2xl opacity-60 hover:opacity-100">
+            <div className="overflow-hidden rounded-full">
               <img
                 className="hidden sm:block"
                 height={job.size.height / 6}
@@ -19,14 +19,16 @@ const Experience = () => {
                 alt={job.alt}
               />
             </div>
-            <div className="grid text-sm md:text-base place-items-center sm:text-sm ">
-              <span className="font-bold">
-                {job.position}{" "}
-                <span className="font-bold text-red-400">
-                  @ {job.company}
+            <div className="grid place-items-center  ">
+              <div>
+                <span className="font-bold">
+                  {job.position}{" "}
+                  <span className="font-bold text-red-400">
+                    @ {job.company}
+                  </span>
                 </span>
-              </span>
-              <ol className="list-disc">
+              </div>
+              <ol className="list-disc text-sm md:text-base sm:text-sm">
                 <li>{job.desc.p1}</li>
                 <li>{job.desc.p2}</li>
                 <li>{job.desc.p3}</li>

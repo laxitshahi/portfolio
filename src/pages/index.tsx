@@ -31,11 +31,6 @@ const Home: NextPage = () => {
   // const { scrollYProgress } = useScroll();
   return (
     <div className="grid h-screen overflow-scroll snap-y snap-mandatory scroll-smooth">
-      {/* <div className="grid"> */}
-      {/* <motion.div */}
-      {/*   className="sticky top-0 left-0 right-0 flex h-2 bg-red-400 origin-[0%] opacity-100 z-100" */}
-      {/*   style={{ scaleX: scrollYProgress }} */}
-      {/* /> */}
       {/* Header */}
       <Header />
       {/* Hero */}
@@ -118,7 +113,7 @@ const projects: Props[] = [
     name: "Patch",
     icons: [<FaBootstrap key="bootstrap" />, <FaPython key="python" />, <FaCss3Alt key="css" />, <SiJavascript key="javascript" />],
     description:
-      "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
+      "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors. The goal was to create an application that would allow users to do just that.",
     image: "/images/patch.gif",
     imgposition: "left",
     initialy: 100,

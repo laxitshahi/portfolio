@@ -1,4 +1,4 @@
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaMailBulk } from "react-icons/fa";
 import { motion } from "framer-motion";
 interface HeaderItem {
   [key: string]: { link: string };
@@ -18,7 +18,7 @@ const Header = () => {
         transition={{ duration: 1 }}
         className="m-4 flex justify-between items-center "
       >
-        <ul className="flex space-x-4 text-2xl w-1/3 justify-left z-80">
+        <ul className="flex space-x-4 w-1/3 justify-left z-80 text-base sm:text-xl md:2xl lg:text-3xl ">
           <li>
             <a
               href={headerItems["github"].link}
@@ -39,10 +39,10 @@ const Header = () => {
           </li>
         </ul>
         {/* Button */}
-        <a onClick={() => window.open('mailto:shahilax@my.yorku.ca')} href="#_" className="px-5 py-2.5 relative rounded-full group overflow-hidden font-medium bg-blue-50 text-blue-900 inline-block z-80">
+        <button onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className="text-xs sm:text-sm md:text-base px-4 py-2.5 flex items-center space-x-1 relative rounded-full group overflow-hidden font-medium bg-black text-white inline-block z-80">
           <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-blue-900 group-hover:h-full opacity-90"></span>
           <span className="relative group-hover:text-white">Get In Touch</span>
-        </a>
+        </button>
       </motion.div>
     </div>
   );
