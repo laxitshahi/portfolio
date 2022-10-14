@@ -104,11 +104,11 @@ const projects: Props[] = [
   {
     name: "Soci-al",
     icons: [
-      <FaReact />,
-      <FaNodeJs />,
-      <SiMongodb />,
-      <SiRedux />,
-      <SiTailwindcss />,
+      <FaReact key="react" />,
+      <FaNodeJs key="nodejs" />,
+      <SiMongodb key="mongodb" />,
+      <SiRedux key="redux" />,
+      <SiTailwindcss key="tailwindcss" />,
     ],
     description:
       "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
@@ -119,7 +119,7 @@ const projects: Props[] = [
   },
   {
     name: "Patch",
-    icons: [<FaBootstrap />, <FaPython />, <FaCss3Alt />, <SiJavascript />],
+    icons: [<FaBootstrap key="bootstrap" />, <FaPython key="python" />, <FaCss3Alt key="css" />, <SiJavascript key="javascript" />],
     description:
       "There is a lack of services that provide a quick and easy method of price matching, allowing individuals to find the best price on aparticular product among multiple retailors.The goal was to createan application that would allow users to do just that.",
     image: "/images/patch.gif",
