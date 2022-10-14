@@ -67,19 +67,16 @@ const Home: NextPage = () => {
                 key={p.name}
                 className="grid h-screen place-content-center snap-center"
               >
-                <>
-                  <Projects
-                    imgposition={p.imgposition}
-                    name={p.name}
-                    icons={p.icons}
-                    description={p.description}
-                    image={p.image}
-                  />
-                </>
+                <Projects
+                  imgposition={p.imgposition}
+                  name={p.name}
+                  icons={p.icons}
+                  description={p.description}
+                  image={p.image}
+                />
               </li>
             );
-          })}
-        </div>
+          })}        </div>
       </section>
       {/*Background*/}
       <div className="absolute right-0 bottom-0 p-2 rounded-full bg-black m-10 text-white">^</div>
@@ -130,8 +127,4 @@ const projects: Props[] = [
 
 ];
 
-
-{
-
-}
 
