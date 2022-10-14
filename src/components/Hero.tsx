@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Hero */}
       <div className="grid space-y-4 text-center place-items-center">
 
-        <h2 className="flex justify-center text-2xl md:text-5xl xl:text-[5.052rem]">
+        <h2 className="flex justify-center text-2xl text-2xl sm:text-5xl xl:text-[5.052rem]  ">
           <span className="font-bold text-blue-900">
             <Typewriter
               words={["Hi, ", "Namaste, ", "Bonjour, "]}
@@ -28,7 +28,7 @@ const Hero = () => {
           my name is Laxit!
         </h2>
 
-        <p className=":flex sm:text-base justify-center hidden md:text-xl xl:text-3xl items-center">
+        <p className="md:flex sm:text-base justify-center hidden md:text-xl xl:text-3xl items-center">
           I am a Computer Engineering Student with a	&nbsp; <span className="text-white xl:text-4xl">passion</span> 	&nbsp; for Software
           Development.
         </p>
