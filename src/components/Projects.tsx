@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+
+
 type Props = {
   imgposition: string;
   icons: ReactNode[];
@@ -10,6 +12,7 @@ type Props = {
 };
 
 const Projects = ({ imgposition, icons, description, image, name }: Props) => {
+
   //Keys
   // Render In Center
   function ImgCenter() {
