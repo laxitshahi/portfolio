@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             Projects
           </h1>
           {projects.map((p) => {
-            return <> {
+            return (
               <li
                 key={p.name}
                 className="grid h-screen place-content-center snap-center"
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
                   />
                 </>
               </li>
-            }</>;
+            );
           })}
         </div>
       </section>
@@ -89,7 +89,6 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
 type Props = {
   imgposition: string;
   icons: ReactNode[];
@@ -99,6 +98,7 @@ type Props = {
   initialy: number;
   finaly: number;
 };
+
 
 const projects: Props[] = [
   {
@@ -129,3 +129,9 @@ const projects: Props[] = [
   },
 
 ];
+
+
+{
+
+}
+

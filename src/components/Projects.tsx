@@ -10,6 +10,7 @@ type Props = {
 };
 
 const Projects = ({ imgposition, icons, description, image, name }: Props) => {
+  //Keys
   // Render In Center
   function ImgCenter() {
     return (
@@ -28,7 +29,11 @@ const Projects = ({ imgposition, icons, description, image, name }: Props) => {
 
           </p>
           <ul className="justify-center space-x-10 text-2xl hidden sm:flex">
-            {icons}
+            {icons.map((icon): ReactNode => {
+              return (
+                <li key={icon.type.name} >{icon}</li>
+              )
+            })}
           </ul>
         </div>
         {/* End */}
