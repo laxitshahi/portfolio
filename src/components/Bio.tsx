@@ -3,7 +3,7 @@ import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Bio = () => {
   return (
-    <div className="grid items-center justify-evenly">
+    <div className="grid items-center justify-evenly place-content-center place-items-center ">
       <h1 className="flex items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
         About Me
       </h1>

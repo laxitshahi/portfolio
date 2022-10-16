@@ -7,7 +7,6 @@ import {
   Bio,
   Experience,
   Projects,
-  FadeInWhenVisible,
 } from "../components/";
 
 // Projects Import
@@ -54,14 +53,14 @@ const Home: NextPage = () => {
       {/*Projects*/}
       <section id="projects">
         <div className="relative grid m-10 mt-48 text-center place-items-center gap-y-20">
-          <h1 className="grid h-screen mx-auto text-3xl font-bold underline place-content-center snap-center md:decoration-8 decoration-4 decoration-red-400 ">
+          <h1 className="grid h-screen mx-auto text-3xl font-bold underline place-content-center snap-start md:decoration-8 decoration-4 decoration-red-400 ">
             Projects
           </h1>
           {projects.map((p) => {
             return (
               <li
                 key={p.name}
-                className="grid h-screen place-content-center snap-center"
+                className="grid h-screen place-content-center snap-start"
               >
                 <Projects
                   link={p.link}
@@ -77,12 +76,26 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      {/* Thank You Page */}
+      <section id="thank-you">
+        <div className="h-screen snap-start grid grid-flow-row-dense place-content-center ">
+
+          <h2 className="text-[4.052rem] font-bold">
+            Thank You for Stopping By!
+          </h2>
+
+          <p className="text-3xl">
+            Feel free to reach out to me on <a href="https://www.linkedin.com/in/laxitshahi/" className="underline decoration-4 decoration-red-600 cursor-pointer">Linkedin</a> or <a onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className="underline decoration-4 decoration-red-600 cursor-pointer">eMail</a>, I would love to have a chat.
+          </p>
+        </div>
+      </section>
+
 
       {/*Background*/}
       <Link href="#hero">
-        <div className="absolute right-0 bottom-0 text-3xl md:text-4xl xl:text-5xl rounded-full m-3 hover:motion-reduce:animate-bounce transition delay-200"> <FaArrowCircleUp /></div>
+        <div className="absolute right-0 bottom-0 text-3xl md:text-4xl xl:text-5xl m-3 hover:motion-reduce:animate-bounce transition delay-200"> <FaArrowCircleUp /></div>
       </Link>
-      <div className="absolute w-screen top-[30%] bg-red-300 left-0 right-0 h-[300px] -z-20 skew-y-12 backdrop-blur-xl"></div>{" "}
+      <div className="absolute w-screen top-[40%] bg-red-300 left-0 right-0 h-[200px] -z-20 skew-y-12 backdrop-blur-xl"></div>{" "}
     </div>
   );
 };

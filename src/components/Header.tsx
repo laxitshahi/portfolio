@@ -39,7 +39,7 @@ const Header = () => {
           </li>
         </ul>
         {/* Button */}
-        <button onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className="-mx-5 md:-mx-2 text-xs sm:text-sm md:text-base xs:p-1 md:p-3 md:py-2.5 flex items-center relative rounded-full group overflow-hidden font-medium bg-black text-white z-80">
+        <button onClick={() => window.open('mailto:shahilax@my.yorku.ca')} className={"-mx-5 md:-mx-2 text-xs sm:text-sm md:text-base xs:p-1 md:p-3 md:py-2.5 flex items-center relative rounded-full group overflow-hidden font-medium bg-black text-white z-80"}>
           <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-blue-900 group-hover:h-full opacity-90"></span>
           <span className="relative group-hover:text-white">Get In Touch</span>
         </button>

@@ -3,12 +3,12 @@ import FadeInWhenVisible from "./FadeInWhenVisible";
 const Experience = () => {
   return (
     <div>
-      <h1 className="flex h-screen snap-center items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
+      <h1 className="flex h-screen snap-start items-center justify-center text-3xl font-bold underline md:decoration-8 decoration-4 decoration-red-400">
         Experience
       </h1>
       <ul className="m-10">
         {jobData.map((job) => (
-          <li key={job.company} className="grid grid-flow-col-dense h-screen snap-center justify-center place-items-center rounded-2xl md:p-20 lg:p-36 items-center">
+          <li key={job.company} className="grid grid-flow-col-dense h-screen snap-start justify-center place-items-center rounded-2xl md:p-20 lg:p-36 items-center">
 
             <FadeInWhenVisible initialy={job.initialy}>
               <div className="overflow-hidden rounded-full">
