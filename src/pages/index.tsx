@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Link from "next/link"
 import {
   Header,
@@ -15,7 +15,6 @@ import {
   FaPython,
   FaReact,
   FaCss3Alt,
-  FaGithub,
   FaNodeJs,
   FaArrowCircleUp,
 } from "react-icons/fa";
@@ -27,10 +26,41 @@ import {
   SiRedux,
 } from "react-icons/si";
 
+import { motion } from "framer-motion";
+
+
+const LoadingScreen = () => {
+  return (<div className="z-[100] absolute w-[100%] h-[100%] bg-white grid place-items-center content-center  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
+    <motion.div className="text-black shadow-black shadow-lg drop-shadow-xl text-2xl rounded-3xl w-56 h-56 bg-white grid place-content-center"
+      whileHover={{ scale: 0.8 }}
+      whileTap={{ scale: 0.7 }}
+      animate={{
+        scale: [1, 1.5, 1.5, 1, 0.5],
+        rotate: [0, 0, 270, 270, 0], borderRadius: ["0%", "20%", "50%", "50%", "100%"],
+      }}
+      transition={{
+        duration: 1.5,
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }}> START </motion.div>
+  </div>)
+}
 const Home: NextPage = () => {
   // const { scrollYProgress } = useScroll();
+  const [loading, setLoading] = useState(true)
+
   return (
     <div className="grid h-screen overflow-scroll snap-y snap-mandatory scroll-smooth">
+      {loading ?
+        <button onClick={() => setLoading(false)}>
+          <LoadingScreen />
+        </button > : <motion.div className="bg-white w-[100%] h-[100%] z-[99]"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0, position: "absolute", transitionEnd: { display: "none" } }}
+          transition={{ duration: 1 }}
+        ></motion.div>
+      }
       {/* Header */}
       <Header />
       {/* Hero */}
@@ -96,7 +126,7 @@ const Home: NextPage = () => {
         <div className="absolute right-0 bottom-0 text-3xl md:text-4xl xl:text-5xl m-3 hover:motion-reduce:animate-bounce transition delay-200"> <FaArrowCircleUp /></div>
       </Link>
       <div className="absolute w-screen top-[40%] bg-red-300 left-0 right-0 h-[200px] -z-20 skew-y-12 backdrop-blur-xl"></div>{" "}
-    </div>
+    </div >
   );
 };
 
