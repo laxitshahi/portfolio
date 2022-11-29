@@ -17,7 +17,7 @@ I wanted to create a simple but interactive website to improve my development sk
 ## To-Do
 
 - [x] Mobile Support
-- [ ] Load in Page
+- [ ] Loading Page on startup
 - [ ] Safari Snap Support
 - [ ] Color Pallet Refactor
 - [ ] Mutli-language support
