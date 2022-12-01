@@ -30,8 +30,8 @@ import { motion } from "framer-motion";
 
 
 const LoadingScreen = () => {
-  return (<div className="z-[100] absolute w-[100%] h-[100%] bg-white grid place-items-center content-center  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
-    <motion.div className="text-black shadow-black shadow-lg drop-shadow-xl text-2xl rounded-3xl w-56 h-56 bg-white grid place-content-center"
+  return (<div className="z-[100] absolute w-[100%] h-[100%] bg-white grid place-items-center content-center">
+    <motion.div className="text-black shadow-black shadow-lg drop-shadow-xl text-2xl rounded-3xl w-56 h-56 bg-red-500 grid place-content-center"
       whileHover={{ scale: 0.8 }}
       whileTap={{ scale: 0.7 }}
       animate={{
