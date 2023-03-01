@@ -28,7 +28,6 @@ import {
 
 import { motion } from "framer-motion";
 
-
 const LoadingScreen = () => {
   return (<div className="z-[100] absolute w-[100%] h-[100%] bg-white grid place-items-center content-center">
     <motion.div className="text-black shadow-black shadow-lg drop-shadow-xl text-2xl rounded-3xl w-56 h-56 bg-red-500 grid place-content-center"

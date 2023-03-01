@@ -8,7 +8,13 @@ interface Props {
   finalx?: number;
 }
 
-const FadeInWhenVisible = ({ children, initialx, initialy, finaly, finalx }: Props) => {
+const FadeInWhenVisible = ({
+  children,
+  initialx,
+  initialy,
+  finaly,
+  finalx,
+}: Props) => {
   if (!initialx) initialx = 0;
   if (!initialy) initialy = 0;
   if (!finaly) finaly = 0;
