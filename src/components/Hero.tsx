@@ -12,6 +12,7 @@ const Hero = () => {
       <div className="grid space-y-4 text-center place-items-center">
         <div className="border-b-8 border-black rounded-full ">
           <Image
+            loading="eager"
             className="w-full rounded-full "
             width={300}
             height={300}
@@ -29,8 +30,8 @@ const Hero = () => {
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1500}
-            // onLoopDone={handleDone}
-            // onType={handleType}
+              // onLoopDone={handleDone}
+              // onType={handleType}
             />
           </span>
           my name is Laxit!
